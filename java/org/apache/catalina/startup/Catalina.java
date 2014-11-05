@@ -54,14 +54,19 @@ import org.xml.sax.InputSource;
  * <li><b>-help</b>      - Display usage information.
  * <li><b>-nonaming</b>  - Disable naming support.
  * <li><b>start</b>      - Start an instance of Catalina.
- * <li><b>stop</b>       - Stop the currently running instance of Catalina.
+ * <li><b>stop</b>   `    - Stop the currently running instance of Catalina.
  * </u>
  *
  * Should do the same thing as Embedded, but using a server.xml file.
  *
  * @author Craig R. McClanahan
  * @author Remy Maucherat
- *
+ * 
+ * args   : start 
+ * VM args:-Dcatalina.home=. -Djaxp.debug=true 
+ * 		   -Djava.util.logging.config.file=./conf/logging.properties
+ * 		   -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+ * 		   -Djava.io.tmpdir=./logs
  */
 
 public class Catalina extends Embedded {
