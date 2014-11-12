@@ -268,8 +268,12 @@ public class Catalina extends Embedded {
         // Configure the actions we will be using
         digester.addObjectCreate("Server",
                                  "org.apache.catalina.core.StandardServer",
-                                 "className");
+                                 "className"); //can be overridden by using the "className" attribute which present in the XML element are currently parsing
+        
+        //The properties of the StandardServer instance (at the top of the stack) are configured based on the attributes of the <Server> element.
         digester.addSetProperties("Server");
+        
+        
         digester.addSetNext("Server",
                             "setServer",
                             "org.apache.catalina.Server");

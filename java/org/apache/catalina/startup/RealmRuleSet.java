@@ -89,7 +89,7 @@ public class RealmRuleSet extends RuleSetBase {
 
         digester.addObjectCreate(prefix + "Realm",
                                  null, // MUST be specified in the element,
-                                 "className");
+                                 "className"); //default org.apache.catalina.realm.UserDatabaseRealm
         digester.addSetProperties(prefix + "Realm");
         digester.addSetNext(prefix + "Realm",
                             "setRealm",
