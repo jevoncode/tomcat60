@@ -209,7 +209,9 @@ public final class Bootstrap {
         Thread.currentThread().setContextClassLoader(catalinaLoader);
 
         SecurityClassLoad.securityClassLoad(catalinaLoader);
-
+        
+        //因为tomcat发布时, 将Bootstrap类打包成独自的包bootstrap.jar, 并且由脚本去启用Boostrap,
+        //所有Bootstrap类和Catalina是分开的, Bootstrap类要调用Catalina就只有用自己的URLClassLoader去加载Catalina类
         // Load our startup class and call its process() method
         if (log.isDebugEnabled())
             log.debug("Loading startup class");

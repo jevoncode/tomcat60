@@ -186,11 +186,11 @@ public class AprLifecycleListener
 
         try {
             String methodName = "initialize";
-            Class<?> paramTypes[] = new Class[1];
+            Class<?> paramTypes[] = new Class[1];  //这是定义一个数据对象,so为paramTypes[0]是null值,下面的一句才是赋值
             paramTypes[0] = String.class;
             Object paramValues[] = new Object[1];
             paramValues[0] = null;
-            Class<?> clazz = Class.forName("org.apache.tomcat.jni.Library");
+            Class<?> clazz = Class.forName("org.apache.tomcat.jni.Library"); //把Library类加载进方法区
             Method method = clazz.getMethod(methodName, paramTypes);
             method.invoke(null, paramValues);
             major = clazz.getField("TCN_MAJOR_VERSION").getInt(null);

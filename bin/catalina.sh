@@ -154,6 +154,7 @@ if $os400; then
   BASEDIR="$CATALINA_HOME"
   . "$CATALINA_HOME"/bin/setclasspath.sh
 else
+  #setclasspath.sh这个文件中设置了_RUNJAVA变量为"$JRE_HOME"/bin/java
   if [ -r "$CATALINA_HOME"/bin/setclasspath.sh ]; then
     BASEDIR="$CATALINA_HOME"
     . "$CATALINA_HOME"/bin/setclasspath.sh
