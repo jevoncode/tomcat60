@@ -1117,7 +1117,7 @@ public class Connector
             setParseBodyMethods(getParseBodyMethods());
 
         IntrospectionUtils.setProperty(protocolHandler, "jkHome",
-                                       System.getProperty("catalina.base"));
+                                       System.getProperty("catalina.base")); //call org.apache.coyote.http11.Http11Protocol's setProperty
 
         try {
             protocolHandler.init();

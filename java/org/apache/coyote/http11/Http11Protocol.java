@@ -183,7 +183,7 @@ public class Http11Protocol extends AbstractProtocol
             throw ex;
         }
         if (log.isInfoEnabled())
-            log.info(sm.getString("http11protocol.init", getName()));
+            log.info(sm.getString("http11protocol.init", getName())); //国际化输出信息, 国际化消息文件就在本包中的properties文件
 
     }
 
